@@ -1,0 +1,101 @@
+{
+  "_comment": "Provenance and delta declaration for this published tree. `verified_id` is the sha256 of the release asset, or the tag's commit OID for a git-tag artifact, as verified against the publisher's SHA256SUMS and against the recorded first-observation digest. `files` declares what was published unchanged, what was stripped, and what was generated. Nothing here is hand-written.",
+  "artifact": "eshieldq-gateway-schemas",
+  "shape": "python-sdist",
+  "version": "4.1.10",
+  "release_tag": "py/eshieldq-gateway-schemas/v4.1.10",
+  "verified_id": "25b3dda49a0bcb6c957bc30abfab738c3f1e2115c45e9944a9e9b57c61119b0f",
+  "public_repo": "qemcorp/eshieldq-gateway-schemas",
+  "staged_utc": "2026-09-02T15:34:23Z",
+  "source_files": [
+    ".gitignore",
+    "LICENSE.md",
+    "PKG-INFO",
+    "README.md",
+    "eshieldq/gateway/schemas/__init__.py",
+    "eshieldq/gateway/schemas/acl.py",
+    "eshieldq/gateway/schemas/auth.py",
+    "eshieldq/gateway/schemas/certs.py",
+    "eshieldq/gateway/schemas/crypto.py",
+    "eshieldq/gateway/schemas/eaas.py",
+    "eshieldq/gateway/schemas/identity.py",
+    "eshieldq/gateway/schemas/inet.py",
+    "eshieldq/gateway/schemas/intf.py",
+    "eshieldq/gateway/schemas/ipsec.py",
+    "eshieldq/gateway/schemas/ldap.py",
+    "eshieldq/gateway/schemas/py.typed",
+    "eshieldq/gateway/schemas/stats.py",
+    "eshieldq/gateway/schemas/swupdate.py",
+    "eshieldq/gateway/schemas/sys.py",
+    "eshieldq/gateway/schemas/users.py",
+    "pyproject.toml"
+  ],
+  "files": {
+    "VERBATIM": {
+      "LICENSE.md": {
+        "sha256": "65fa1ca7dfef0642dee7742c7755c120b98069587717fb54ffe0a8b4b78ef60c"
+      },
+      "eshieldq/gateway/schemas/__init__.py": {
+        "sha256": "61dcd3d5354e727c1e12cbb2566a04b908e6162f707f6cc1f18c60b179b7578a"
+      },
+      "eshieldq/gateway/schemas/acl.py": {
+        "sha256": "25bfa152c58d69bf777ce2e22e727a37a92fa4b236e85bacfa996ba969aca4d5"
+      },
+      "eshieldq/gateway/schemas/auth.py": {
+        "sha256": "7dc9814bd88445151d76d549ba0fa579106cf8cf567c7f605561c04eb007bd83"
+      },
+      "eshieldq/gateway/schemas/certs.py": {
+        "sha256": "a7f807553eec03882f3ba41cd2a8475566f6f61ccc7cfc96917e13c60a514b00"
+      },
+      "eshieldq/gateway/schemas/crypto.py": {
+        "sha256": "42e9bfe1f50598e763a9869904eed02b3752dd596c268c109e968ae84a9aef3e"
+      },
+      "eshieldq/gateway/schemas/eaas.py": {
+        "sha256": "d076b82b0b414e400918e83a80462c9b66352052b9d789b1d83c5b700fa4b08b"
+      },
+      "eshieldq/gateway/schemas/identity.py": {
+        "sha256": "4f21ccf053f01869dbfe0e975193cd64d4f5107f6744859dfd1115bc5669f2db"
+      },
+      "eshieldq/gateway/schemas/inet.py": {
+        "sha256": "b8ff12dfab04f356bbcc39161679e8ab4d32b84b988295896ed9f9a8601afd63"
+      },
+      "eshieldq/gateway/schemas/intf.py": {
+        "sha256": "f55b0726dddf1a0a6ced6c7df9f76eaa1862851ad5c7591df0a6df1786f42b5c"
+      },
+      "eshieldq/gateway/schemas/ipsec.py": {
+        "sha256": "877ff74cf83781079eb8208daf2cf88239e2701537122cb3d74fa5fba85c6193"
+      },
+      "eshieldq/gateway/schemas/ldap.py": {
+        "sha256": "28dc7a4f996ccc979516724d72abf4c40b411223ff7e4de242e42e9a2b8e5aac"
+      },
+      "eshieldq/gateway/schemas/py.typed": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "eshieldq/gateway/schemas/stats.py": {
+        "sha256": "df698163d8c2296771c22dd2545fdec69b8ba436193976b88210e6b0bd7e189d"
+      },
+      "eshieldq/gateway/schemas/swupdate.py": {
+        "sha256": "18eea203db246cf09c7b4d8b79e983f66530d66798c41ffb27294e40a16e1da1"
+      },
+      "eshieldq/gateway/schemas/sys.py": {
+        "sha256": "86caa14032e045a6c955f593d9ae3c725c1a8fb54cfc7a7e31fa61e5bf02cbba"
+      },
+      "eshieldq/gateway/schemas/users.py": {
+        "sha256": "45bc956d7bc8ae7deaeac4e3c8378e135bc34fca72e21d6c048e2ea7d97036fa"
+      },
+      "pyproject.toml": {
+        "sha256": "fcdd7c286c9c3fab2687b7bd722e793a7d652f2fa9879852708b1e57c5d9ebf3"
+      }
+    },
+    "REMOVED": [
+      ".gitignore",
+      "PKG-INFO",
+      "README.md"
+    ],
+    "GENERATED": [
+      "README.md",
+      "SECURITY.md",
+      "public_sdk.json"
+    ]
+  }
+}
