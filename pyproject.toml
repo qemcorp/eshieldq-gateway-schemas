@@ -1,0 +1,82 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "eshieldq-gateway-schemas"
+dynamic = ["version"]
+description = "The eShield-Q Gateway REST API Schema Definitions."
+readme = "README.md"
+license = {file = "LICENSE.md"}
+requires-python = ">=3.10"
+authors = [
+    { name = "Jason Thomas", email = "info@quantumemotion.com" },
+]
+classifiers = [
+    "Environment :: Web Environment",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    # >=2: field_validator, model_validator and ConfigDict are v2-only APIs and
+    # are used here. Unversioned, a pydantic 1.x already in the environment
+    # satisfies the requirement and the package then fails on import.
+    "pydantic>=2",
+    # certs.py imports PydanticCustomError/core_schema directly, so this is a direct dependency
+    # rather than something pydantic happens to bring along.
+    "pydantic-core",
+    "sqlalchemy",
+    "sqlmodel"
+]
+
+
+[project.urls]
+Homepage = "https://quantumemotion.com/"
+
+[tool.mypy]
+# Pydantic plugin so mypy understands Field()/model semantics.
+plugins = ["pydantic.mypy"]
+# eshieldq/ and eshieldq/gateway/ are PEP 420 namespace dirs with no __init__.py.
+# Without an explicit package base mypy walks up from a module until it stops
+# finding __init__.py, which makes eshieldq/gateway/schemas/inet.py resolve as
+# BOTH schemas.inet and eshieldq.gateway.schemas.inet -- "source file found twice
+# under different module names", and it refuses to check anything.
+namespace_packages = true
+explicit_package_bases = true
+mypy_path = "."
+
+[tool.hatch.version]
+path = "eshieldq/gateway/schemas/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["eshieldq"]
+
+[tool.hatch.build.targets.sdist]
+# An allowlist, not an exclude list: an exclude list means "everything beside the
+# package unless named", so anything added later ships silently. The sdist should
+# be the package.
+include = [
+  "eshieldq/",
+  "pyproject.toml",
+  "README.md",
+  "LICENSE.md",
+  # No-op in THIS repository, which has no SECURITY.md, and hatchling ignores a
+  # missing include rather than failing. It takes effect in the published
+  # mirror, where the publication pipeline generates SECURITY.md beside a README
+  # that links to it -- so `pip install git+https://...` from there gets the
+  # policy instead of a dead link.
+  "SECURITY.md",
+]
+# hatchling force-includes a few things regardless of `include`, notably
+# .gitignore and any nested README. Neither belongs in a published package.
+exclude = [
+  ".gitignore",
+  "docs/",
+]
+
+
+
