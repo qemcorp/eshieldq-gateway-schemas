@@ -1,0 +1,76 @@
+name: Publish public SDK to PyPI
+
+on:
+  workflow_dispatch:
+    inputs:
+      release:
+        description: Approved package name, version, Git commit and distribution hashes
+        required: true
+        type: string
+      index:
+        description: Destination package index
+        required: true
+        type: choice
+        options: [testpypi, pypi]
+
+permissions: {}
+
+concurrency:
+  group: sdk-publish-${{ inputs.index }}
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: startsWith(github.ref, 'refs/tags/v') && github.actor == vars.PYPI_DISPATCH_ACTOR
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    environment: ${{ inputs.index }}
+    outputs:
+      name: ${{ steps.files.outputs.name }}
+      version: ${{ steps.files.outputs.version }}
+    permissions:
+      contents: read
+      id-token: write
+    env:
+      SDK_RELEASE: ${{ inputs.release }}
+      PYPI_INDEX: ${{ inputs.index }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+
+      - name: Verify the public tag and stage only missing distribution files
+        id: files
+        run: python3 .github/pypi/release_files.py prepare
+
+      - name: Publish to TestPyPI
+        if: steps.files.outputs.upload == 'true' && inputs.index == 'testpypi'
+        uses: pypa/gh-action-pypi-publish@cef221092ed1bacb1cc03d23a2d87d1d172e277b # v1.14.0
+        with:
+          repository-url: https://test.pypi.org/legacy/
+
+      - name: Publish to PyPI
+        if: steps.files.outputs.upload == 'true' && inputs.index == 'pypi'
+        uses: pypa/gh-action-pypi-publish@cef221092ed1bacb1cc03d23a2d87d1d172e277b # v1.14.0
+
+      - name: Verify exact versions and hashes on the package index
+        run: python3 .github/pypi/release_files.py confirm
+
+  smoke:
+    needs: publish
+    if: inputs.index == 'pypi'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    env:
+      PROJECT: ${{ needs.publish.outputs.name }}
+      VERSION: ${{ needs.publish.outputs.version }}
+    steps:
+      - name: Install the released version from PyPI
+        run: |
+          set -euo pipefail
+          python3 -m venv "$RUNNER_TEMP/public-sdk"
+          sdk_python="$RUNNER_TEMP/public-sdk/bin/python"
+          "$sdk_python" -m pip --isolated install --index-url https://pypi.org/simple \
+            --only-binary=:all: "$PROJECT==$VERSION"
+          "$sdk_python" -m pip check
+          "$sdk_python" -c "import eshieldq.gateway.${PROJECT##*-}"

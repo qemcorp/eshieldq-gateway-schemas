@@ -1,0 +1,111 @@
+{
+  "_comment": "Provenance and delta declaration for this published tree. `verified_id` is the sha256 of the release asset, or the tag's commit OID for a git-tag artifact, as verified against the publisher's SHA256SUMS and against the recorded first-observation digest. `files` declares what was published unchanged, what was stripped, and what was generated. Nothing here is hand-written.",
+  "artifact": "eshieldq-gateway-schemas",
+  "shape": "python-sdist",
+  "version": "4.1.51",
+  "release_tag": "py/eshieldq-gateway-schemas/v4.1.51",
+  "verified_id": "aa79de66ce7e93656766eff589c4ab8da5fb6fd8e0a320c046db8f5561c09e1d",
+  "public_repo": "qemcorp/eshieldq-gateway-schemas",
+  "staged_utc": "2026-11-23T23:55:27Z",
+  "source_files": [
+    ".gitignore",
+    "LICENSE.md",
+    "PKG-INFO",
+    "README.md",
+    "eshieldq/gateway/schemas/__init__.py",
+    "eshieldq/gateway/schemas/aaa.py",
+    "eshieldq/gateway/schemas/acl.py",
+    "eshieldq/gateway/schemas/auth.py",
+    "eshieldq/gateway/schemas/certs.py",
+    "eshieldq/gateway/schemas/crypto.py",
+    "eshieldq/gateway/schemas/eaas.py",
+    "eshieldq/gateway/schemas/identity.py",
+    "eshieldq/gateway/schemas/inet.py",
+    "eshieldq/gateway/schemas/intf.py",
+    "eshieldq/gateway/schemas/ipsec.py",
+    "eshieldq/gateway/schemas/ldap.py",
+    "eshieldq/gateway/schemas/py.typed",
+    "eshieldq/gateway/schemas/stats.py",
+    "eshieldq/gateway/schemas/swupdate.py",
+    "eshieldq/gateway/schemas/sys.py",
+    "eshieldq/gateway/schemas/users.py",
+    "eshieldq/gateway/schemas/validation_errors.py",
+    "pyproject.toml"
+  ],
+  "files": {
+    "VERBATIM": {
+      "LICENSE.md": {
+        "sha256": "65fa1ca7dfef0642dee7742c7755c120b98069587717fb54ffe0a8b4b78ef60c"
+      },
+      "eshieldq/gateway/schemas/__init__.py": {
+        "sha256": "b38dab98eb30d1edfb972d3f5a8a901bd39c5c97e6c99f76bfc11e93197b0e02"
+      },
+      "eshieldq/gateway/schemas/aaa.py": {
+        "sha256": "43d412b03acff8d3714c45e5bb39c538be313c0880cc516cae968b4bbbe97ba4"
+      },
+      "eshieldq/gateway/schemas/acl.py": {
+        "sha256": "e0dc7fda606759b4cd8e5bbc0097f38c9da79c0ced75d6ad7c92c497e743dff7"
+      },
+      "eshieldq/gateway/schemas/auth.py": {
+        "sha256": "d5d26c38eda416e01367f3dee9efc1f50e9c464ce1e25edd5c0b4ff178ecaae9"
+      },
+      "eshieldq/gateway/schemas/certs.py": {
+        "sha256": "ab33495619dfd4232d72e5a8a291aed4d4ec8c1c3ed67f0dffdde4bfb58cd15c"
+      },
+      "eshieldq/gateway/schemas/crypto.py": {
+        "sha256": "66ac6b0157ff42a7f68410af31c593ec85e91829dafc5d686355d6eb40c93481"
+      },
+      "eshieldq/gateway/schemas/eaas.py": {
+        "sha256": "424c65be8e4ace12b3f4de2f7e692e6d9301575d102aa6cb161b709c39208933"
+      },
+      "eshieldq/gateway/schemas/identity.py": {
+        "sha256": "4f21ccf053f01869dbfe0e975193cd64d4f5107f6744859dfd1115bc5669f2db"
+      },
+      "eshieldq/gateway/schemas/inet.py": {
+        "sha256": "2a4dbe2f3db5af5fa9fe6fa3a755747707876b948c64519ad81a123c568ca74b"
+      },
+      "eshieldq/gateway/schemas/intf.py": {
+        "sha256": "b93fd174ce067e46d61db2094ea8af69059d1952b25706429bf102f4f6edb82f"
+      },
+      "eshieldq/gateway/schemas/ipsec.py": {
+        "sha256": "99ef5cee0bd82262c8906ed16cceb9594e69c36269b8e2bf28ef8b47ae611eb8"
+      },
+      "eshieldq/gateway/schemas/ldap.py": {
+        "sha256": "c876ba2106ac04b15c8a221bddf26985d31f49fc446ffb4fbaef1e968fc3a2b1"
+      },
+      "eshieldq/gateway/schemas/py.typed": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "eshieldq/gateway/schemas/stats.py": {
+        "sha256": "df698163d8c2296771c22dd2545fdec69b8ba436193976b88210e6b0bd7e189d"
+      },
+      "eshieldq/gateway/schemas/swupdate.py": {
+        "sha256": "7b17dee4cb68f71eec2c3228fcf95d8e0af627b0095ea1831de282325701e2e6"
+      },
+      "eshieldq/gateway/schemas/sys.py": {
+        "sha256": "fb145322e8990025722664866d733d95d6a240c68e4232b2aca1fff1ccce0810"
+      },
+      "eshieldq/gateway/schemas/users.py": {
+        "sha256": "c7ea0d76ae075222c5afa1b622324164338963d817fcea0d8f7bdffe619584cd"
+      },
+      "eshieldq/gateway/schemas/validation_errors.py": {
+        "sha256": "d1944b5f74f597f0d0c636d40ffd43fe76db740e6725508c67d062c4750f03db"
+      },
+      "pyproject.toml": {
+        "sha256": "3d4ec036c991eacd5dc1ff76f25fcd8292792b04f418d3b16d9499fa7ba05383"
+      }
+    },
+    "REMOVED": [
+      ".gitignore",
+      "PKG-INFO",
+      "README.md"
+    ],
+    "GENERATED": [
+      ".github/pypi/release_files.py",
+      ".github/workflows/publish-pypi.yml",
+      "README.md",
+      "SECURITY.md",
+      "public_sdk.json"
+    ]
+  }
+}
